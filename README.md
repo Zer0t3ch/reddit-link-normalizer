@@ -1,7 +1,7 @@
 # Reddit-Participation
 
 ## What is it?
-Reddit-Participation is a chrome extension that serves one purpose: to remove all `np.reddit.com` links from Reddit.
+Reddit-Participation is a chrome extension that serves one purpose: to fix all `np.reddit.com` links posted on Reddit.
 
 ## Why?
 np.reddit.com links were created to help prevent the participation of users in one sub from interacting/participating with other subs that get linked. (Such as the links in `/r/bestof`)
