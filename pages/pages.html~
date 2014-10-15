@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RP Options</title>
+	</head>
+	<body onLoad="loaded();">
+		<table align="center" valign="middle" width="100%">
+			<tr width="100%">
+				<th width="100%" align="center">Reddit Participation Options</th>
+			</tr>
+			<tr width="100%" align="center">
+				<td width="50%" align="center">
+					<img src="../icons/icon256.png" />
+				</td>
+				<td width="50%" align="center">
+					<div title="What shall I replace np with?">Desired prefix: </div>
+					<input type="text" id="prefix" onKeyUp="changeMonitor();"></input>
+				</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+			var box;
+			
+			function changeMonitor() {
+				var val = box.value;
+				console.log(val);
+			}
+			
+			function loaded() {
+				box = document.getElementById("prefix")
+				
+			}
+			
+			function getStore(key) {
+				chrome.runtime.sendMessage({ m: "get", k: key }, function(response) { return response.data; });
+			}
+			
+			function setStore(key, data) {
+				chrome.runtime.sendMessage({ m: "set", k: key, d: data }, function(response){ });
+			}
+		</script>
+	</body>
+</html>

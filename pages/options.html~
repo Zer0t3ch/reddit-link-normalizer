@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>RP Options</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../options.js"></script>
+	</head>
+	<body>
+		<table align="center" valign="middle" width="100%">
+			<tr width="100%">
+				<th width="100%" align="center">Reddit Participation Options</th>
+			</tr>
+			<tr width="100%" align="center">
+				<td width="50%" align="center">
+					<img src="../icons/icon256.png" />
+				</td>
+				<td width="50%" align="center">
+					<div title="What shall I replace np with?">Desired prefix: </div>
+					<input type="text" id="prefix"></input>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
