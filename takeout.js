@@ -1,17 +1,22 @@
 var np_count = 0;
 var prefix;
 
-function np_checker() {
-	chrome.runtime.sendMessage({ m: "get", k: "prefix", default: "www" }, function(response) { prefix = response.data; });
+function checker() {
+	chrome.runtime.sendMessage({ m: "get", k: "prefix", default: "www.reddit.com" }, function(response) { np_checker(response.data); });
+}
+
+function np_checker(pre) {
+	// console.debug(pre);
 	var old_count = np_count;
 	var anchors = document.getElementsByTagName("a");
 	for (var i = 0; i < anchors.length; i++) {
 		var a = anchors[i]
 		var o = a.href;
-		var n = o.replace("np.", prefix + ".");
+		var n = o.replace("np.reddit.com", pre);
 		if (o != n) {
 			// console.log("Changing \"" + o + "\" to \"" + n);
-			anchors[i].href = anchors[i].href.replace("np.", "www.");
+			console.log({ o:o, n:n, a:a });
+			a.href = n;
 			np_count++;
 		}
 	}
@@ -22,8 +27,4 @@ function np_checker() {
 	
 }
 
-setInterval( "np_checker()", 1500 );
-
-function getStore(key, def) {
-	
-}
+setInterval( "checker()", 1500 );
