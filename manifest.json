@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 
 	"name"		: "Reddit Participation",
-	"description"	: "Replaces all np.reddit.com links on Reddit, primarily for /r/bestof.",
+	"description"	: "Simplifies all *.reddit.com links",
 	"author"	: "Zachary \"zer0t3ch\" Hill",
 	"version"	: "1.1",
 	"icons"		: {
